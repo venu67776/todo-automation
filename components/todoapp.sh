@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 COMPONENT=$1
 if [ ! -f components/${COMPONENT}.sh ] ; then
   echo "Invalid Component name Is Provided"
