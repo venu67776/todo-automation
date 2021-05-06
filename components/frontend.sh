@@ -16,8 +16,12 @@ Stat $?
 
 Head "changing path"
 cd /var/www/html
+sed -i -e "s//root/var/www/html //root/var/www/html/frontend/dist/"
 
 DOWNLOAD_COMPONENT 
+
+Head "Update Nginx Configuration"
+
 
 
 
