@@ -26,3 +26,8 @@ ERROR() {
   echo -e "\e[1;31m$1\e[0m"
 }
 
+DOWNLOAD_COMPONENT() {
+  Head "Downloading ${COMPONENT} Component"
+  git clone https://github.com/venu67776/${COMPONENT}.git
+  Stat $?
+}
