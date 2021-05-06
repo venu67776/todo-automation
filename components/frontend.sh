@@ -15,7 +15,7 @@ apt install npm -y  &>>$LOG
 Stat $?
 
 Head "changing path"
-cd var/www/html
+cd /var/www/html
 
 DOWNLOAD_COMPONENT
 
