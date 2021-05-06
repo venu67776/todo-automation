@@ -17,7 +17,7 @@ Stat $?
 Head "changing path"
 cd /var/www/html
 
-DOWNLOAD_COMPONENT
+DOWNLOAD_COMPONENT &>>$LOG
 
 
 
