@@ -14,6 +14,9 @@ Head "Installing Npm"
 apt install npm -y 
 Stat $?
 
+Head "changing path"
+cd var/www/html
+
 DOWNLOAD_COMPONENT
 
 
