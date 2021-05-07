@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd ~
 source components/common.sh
 
 OS_PREREQ
