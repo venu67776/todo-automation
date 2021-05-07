@@ -8,10 +8,6 @@ Head "Installing Nginx"
 apt install nginx -y &>>$LOG
 Stat $?
 
-Head "Installing Npm"
-apt install npm -y  &>>$LOG
-Stat $?
-
 Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
@@ -20,11 +16,12 @@ Stat $?
 
 DOWNLOAD_COMPONENT 
 
-Head "Install and start npm service"
+Head "Install npm and start npm service"
 cd frontend
-npm install
-npm run build
-npm start
+apt install npm -y &>>$LOG
+npm install &>>$LOG
+npm run build &>>$LOG
+npm start &>>$LOG
 Stat $?
 
 Head "Restart Nginx service"
