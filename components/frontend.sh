@@ -16,7 +16,8 @@ Stat $?
 
 Head "changing path"
 cd /var/www/html
-sed -i 's|/var/www/html|/var/www/html/frontend|g /etc/nginx/sites-enabled/default
+cd /etc/nginx/sites-enabled
+sed -i 's|/var/www/html|/var/www/html/frontend|g  default
 
 DOWNLOAD_COMPONENT 
 
