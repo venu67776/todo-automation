@@ -10,13 +10,16 @@ Stat $?
 
 DOWNLOAD_COMPONENT
 
-Head "Update Login "
-cd login
-export GOPATH=/go
-go get &>>$LOG
-go build
+Head "Extract Downloaded Archive"
+cd /home/ubuntu && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-main login && cd /home/ubuntu/login && export GOPATH=/go && go get &>>$LOG && go build
 Stat $?
 
-Head "Setup SystemD Service"
-mv /home/ubuntu/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start cart && systemctl enable cart &>>$LOG
+Head "Update EndPoints in Service File"
+sed -i -e "s/CARTENDPOINT/cart.zsdevops01.online/" -e "s/DBHOST/mysql.zsdevops01.online/" /home/ubuntu/login/systemd.service
 Stat $?
+
+
+Head "Setup SystemD Service"
+mv /home/ubuntu/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start shipping && systemctl enable shipping &>>$LOG
+Stat $?
+
