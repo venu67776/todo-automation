@@ -19,7 +19,5 @@ sed -i -e "s/user_endpoint/login.venu6776.tk/" /home/ubuntu/login/systemd.servic
 Stat $?
 
 
-Head "Setup SystemD Service"
-mv /home/ubuntu/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start login && systemctl enable login &>>$LOG
-Stat $?
+
 
