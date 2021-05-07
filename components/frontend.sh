@@ -25,6 +25,7 @@ DOWNLOAD_COMPONENT
 Head "Install and start npm service"
 npm install
 npm build
+npm start
 Stat $?
 
 Head "Restart Nginx service"
