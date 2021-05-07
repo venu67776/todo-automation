@@ -16,6 +16,6 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Extract Downloaded Archive"
-cd /home/ubuntu && rm -rf users && unzip -o /tmp/users.zip &>>$LOG && mv users-main users  && cd /home/ubuntu/users && mvn clean package &>>$LOG 
+cd /home/ubuntu && rm -rf users && unzip -o /tmp/users.zip  && mv users-main users  && cd /home/ubuntu/users && mvn clean package &>>$LOG 
 Stat $?
 
