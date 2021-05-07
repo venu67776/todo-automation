@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo su
 cd ~
+
 source components/common.sh
 
 OS_PREREQ
