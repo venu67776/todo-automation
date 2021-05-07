@@ -22,3 +22,12 @@ Stat $?
 
 DOWNLOAD_COMPONENT 
 
+Head "Install and start npm service"
+npm install
+npm build
+Stat $?
+
+Head "Restart Nginx service"
+systemctl restart nginx
+
+
