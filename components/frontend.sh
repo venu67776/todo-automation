@@ -11,7 +11,7 @@ Stat $?
 Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
-cd ~ && cd /var/www/html
+cd /var/www/html
 Stat $?
 
 DOWNLOAD_COMPONENT 
