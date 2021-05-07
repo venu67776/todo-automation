@@ -4,16 +4,18 @@ source components/common.sh
 
 OS_PREREQ
 
-Head "Installing Golang"
-apt install golang -y &>>$LOG
+Head "Installing java"
+apt install openjdk-8-jdk &>>$LOG
 Stat $?
+
+Head "Installing maven"
+apt install maven -y &>>$LOG
+Stat $?
+
 
 DOWNLOAD_COMPONENT
 
 Head "Extract Downloaded Archive"
-cd /home/ubuntu && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-main login && cd /home/ubuntu/login && export GOPATH=/go && go build
+cd /home/ubuntu && rm -rf users && unzip -o /tmp/users.zip &>>$LOG && mv users-main users  && cd /home/ubuntu/users && mvn clean package &>>$LOG 
 Stat $?
 
-Head "Update EndPoints in Service File"
-sed -i -e "s/user_endpoint/login.venu6776.tk/" /home/ubuntu/login/systemd.service
-Stat $?
