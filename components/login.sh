@@ -15,5 +15,5 @@ cd login
 export GOPATH=/go
 go get
 go build
-./Login
+./login
 Stat $?
