@@ -20,7 +20,7 @@ cd /home/ubuntu && rm -rf users && unzip -o /tmp/users.zip &>>$LOG && mv users-m
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/user_endpoint/login.venu6776.tk/" /home/ubuntu/login/systemd.service
+sed -i -e "s/user_endpoint/login.venu6776.tk/" /home/ubuntu/users/systemd.service
 Stat $?
 
 
