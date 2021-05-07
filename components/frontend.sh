@@ -19,9 +19,9 @@ DOWNLOAD_COMPONENT
 Head "Install npm and start npm service"
 cd frontend
 apt install npm -y &>>$LOG
-npm install &>>$LOG
-npm run build &>>$LOG
-npm start &>>$LOG
+npm install 
+npm run build 
+npm start 
 Stat $?
 
 Head "Restart Nginx service"
