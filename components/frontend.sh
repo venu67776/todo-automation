@@ -2,8 +2,6 @@
 
 source components/common.sh
 
-DOMAIN="zsdevops01.online"
-
 OS_PREREQ
 
 Head "Installing Nginx"
@@ -16,15 +14,16 @@ Stat $?
 
 Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
-sed -i 's|/var/www/html|/var/www/html/frontend|g' /etc/nginx/sites-enabled/default
+sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
 cd ~ && cd /var/www/html
 Stat $?
 
 DOWNLOAD_COMPONENT 
 
 Head "Install and start npm service"
+cd frontend
 npm install
-npm build
+npm run build
 npm start
 Stat $?
 

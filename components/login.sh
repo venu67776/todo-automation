@@ -1,2 +1,7 @@
 #!/bin/bash
-echo hello venu
+
+source components/common.sh
+
+OS_PREREQ
+
+
