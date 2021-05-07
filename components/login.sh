@@ -11,15 +11,15 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Extract Downloaded Archive"
-cd /root && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-main login && cd /root/login && export GOPATH=/go && go build &&chown ubuntu:ubuntu /home/ubuntu -R
+cd /home/ubuntu && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-main login && cd /home/ubuntu/login && export GOPATH=/go && go build &&chown ubuntu:ubuntu /home/ubuntu -R
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/user_endpoint/login.venu6776.tk/" /root/login/systemd.service
+sed -i -e "s/user_endpoint/login.venu6776.tk/" /home/ubuntu/login/systemd.service
 Stat $?
 
 
 Head "Setup SystemD Service"
-mv /root/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start login && systemctl enable login &>>$LOG
+mv /home/ubuntu/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start login && systemctl enable login &>>$LOG
 Stat $?
 
