@@ -21,11 +21,7 @@ Stat $?
 DOWNLOAD_COMPONENT 
 
 Head "Install and start npm service"
-cd frontend
-npm install
-npm run build
-npm start
-Stat $?
+
 
 Head "Restart Nginx service"
 systemctl restart nginx
