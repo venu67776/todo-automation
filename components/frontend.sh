@@ -15,9 +15,9 @@ apt install npm -y  &>>$LOG
 Stat $?
 
 Head "Update Nginx Configuration"
-cd /var/www/html
 cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend|g' /etc/nginx/sites-enabled/default
+cd /var/www/html
 
 DOWNLOAD_COMPONENT 
 
