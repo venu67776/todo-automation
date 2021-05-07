@@ -13,7 +13,7 @@ DOWNLOAD_COMPONENT
 Head "Update Login "
 cd login
 export GOPATH=/go
-go get
+go get &>>$LOG
 go build
-./login
+./login &>>$LOG
 Stat $?
