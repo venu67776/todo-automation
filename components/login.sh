@@ -15,7 +15,7 @@ cd /home/ubuntu && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-m
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/CARTENDPOINT/cart.zsdevops01.online/" -e "s/DBHOST/mysql.zsdevops01.online/" /home/ubuntu/login/systemd.service
+sed -i -e "s/user_endpoint/login.venu6776.tk/" -e "s/DBHOST/mysql.zsdevops01.online/" /home/ubuntu/login/systemd.service
 Stat $?
 
 
