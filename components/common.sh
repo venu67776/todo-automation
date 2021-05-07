@@ -28,6 +28,6 @@ ERROR() {
 
 DOWNLOAD_COMPONENT() {
   Head "Downloading ${COMPONENT} Component"
-  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/zelar-soft-roboshop/${COMPONENT}/archive/main.zip"
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/venugopal67776/${COMPONENT}/archive/main.zip"
   Stat $?
 }
