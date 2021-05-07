@@ -21,11 +21,3 @@ sed -i 's|/var/www/html|/var/www/html/frontend|g /etc/nginx/sites-enabled/defaul
 DOWNLOAD_COMPONENT 
 
 Head "Update Nginx Configuration"
-
-
-
-
-
-
-
-
