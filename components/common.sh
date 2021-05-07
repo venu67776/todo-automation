@@ -16,6 +16,7 @@ Stat() {
 }
 
 OS_PREREQ() {
+  sudo su -
   set-hostname ${COMPONENT}
   Head "Updating APT Repos"
   apt update &>>$LOG
