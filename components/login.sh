@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo su
-cd ~
 
 source components/common.sh
 
@@ -17,4 +15,8 @@ cd login
 export GOPATH=/go
 go get &>>$LOG
 go build
+Stat $?
+
+Head "Setup SystemD Service"
+mv /home/ubuntu/login/systemd.service /etc/systemd/system/login.service && systemctl daemon-reload && systemctl start cart && systemctl enable cart &>>$LOG
 Stat $?
