@@ -20,6 +20,6 @@ Stat $?
 
 
 Head "Setup SystemD Service"
-mv /home/ubuntu/login/systemd.service home/ubuntu/etc/systemd/system/login.service && systemctl daemon-reload && systemctl start login && systemctl enable login &>>$LOG
+mv systemd.service etc/systemd/system/login.service && systemctl daemon-reload && systemctl start login && systemctl enable login &>>$LOG
 Stat $?
 
