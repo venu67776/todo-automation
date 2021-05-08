@@ -17,10 +17,13 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
-cd /var/www && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip && mv frontend-main frontend && cd frontend
+cd /var/www/html && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip && mv frontend-main frontend && cd frontend
 Stat $?
 
-
+Head "Update Nginx Configuration"
+cd /etc/nginx/sites-enabled
+sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
+Stat $?
 
 Head "Restart Nginx Service"
 systemctl restart nginx
