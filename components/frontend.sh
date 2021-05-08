@@ -26,7 +26,7 @@ apt install npm -y &>>$LOG
 Stat $?
 
 Head "update Frontend Configuration"
-cd /var/www/html/frontend && npm run build && npm start &>>$LOG
+cd /var/www/html/frontend && npm install && npm run build && npm start &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
