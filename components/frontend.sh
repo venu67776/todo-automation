@@ -26,7 +26,7 @@ sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/
 Stat $?
 
 Head "update Frontend Configuration"
-cd /var/www/html/frontend && npm install --force  && npm run build && npm start &>>$LOG
+cd /var/www/html/frontend 
 Stat $?
 
 Head "Update EndPoints in Service File"
