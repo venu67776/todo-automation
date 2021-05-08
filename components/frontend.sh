@@ -24,3 +24,13 @@ Head "Unzip Downloaded Archive"
 cd /var/www && unzip -o /tmp/frontend.zip &>>$LOG && mv frontend-main/* . && mv static html && rm -rf frontend-main README.md
 Stat $?
 
+Head "Update Nginx Configuration"
+mv todp.conf /etc/nginx/sites-enabled/todo.conf
+for comp in login todo ; do
+  sed -i -e "/$comp/ s/localhost/${comp}.venu6776.tk/" /etc/nginx/sites-enabled/todo.conf
+done
+Stat $?
+
+Head "Restart Nginx Service"
+systemctl restart nginx
+Stat $?
