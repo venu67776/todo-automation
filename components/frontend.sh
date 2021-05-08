@@ -29,10 +29,6 @@ Head "update Frontend Configuration"
 cd /var/www/html/frontend 
 Stat $?
 
-Head "Update EndPoints in Service File"
-sed -i -e "s//cart.zsdevops01.online/" -e "s/USERHOST/user.zsdevops01.online/" -e "s/AMQPHOST/rabbitmq.zsdevops01.online/" /home/roboshop/payment/systemd.service
-Stat $?
-
 Head "Restart Nginx Service"
 systemctl restart nginx
 Stat $?
