@@ -22,7 +22,7 @@ sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/
 Stat $?
 
 Head "Installing nodejs & Npm"
- sudo apt install nodejs -y
+ apt install nodejs -y
  apt-get install npm -y
  Stat $?
 
