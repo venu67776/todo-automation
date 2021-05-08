@@ -24,7 +24,7 @@ Stat $?
 Head "Installing Npm"
   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
  apt-get install -y nodejs
- apt install npm i -g npm@latest
+ apt install npm -y
 Stat $?
 
 Head "update Frontend Configuration"
