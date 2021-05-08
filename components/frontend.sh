@@ -21,11 +21,10 @@ cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
-Head "Installing Npm"
-
+Head "Installing nodejs & Npm"
  apt install nodejs -y
  apt install npm -y
-Stat $?
+ Stat $?
 
 Head "update Frontend Configuration"
 cd /var/www/html/frontend && npm install  && npm run build && npm start &>>$LOG
