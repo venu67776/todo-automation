@@ -28,7 +28,7 @@ Head "Installing Npm"
 Stat $?
 
 Head "update Frontend Configuration"
-cd /var/www/html/frontend && npm install -g n && npm run build && npm start &>>$LOG
+cd /var/www/html/frontend && npm install  && npm run build && npm start &>>$LOG
 Stat $?
 
 Head "Update EndPoints in Service File"
