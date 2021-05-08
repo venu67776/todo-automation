@@ -22,7 +22,9 @@ sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/
 Stat $?
 
 Head "Installing Npm"
-apt install npm -y &>>$LOG
+  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+ apt-get install -y nodejs
+ apt install npm i -g npm@latest
 Stat $?
 
 Head "update Frontend Configuration"
