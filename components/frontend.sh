@@ -10,10 +10,6 @@ Head "Installing Nginx"
 apt install nginx -y &>>$LOG
 Stat $?
 
-Head "Installing Npm"
-apt install npm -y &>>$LOG
-Stat $?
-
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
@@ -25,8 +21,16 @@ cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
+Head "Installing Npm"
+apt install npm -y &>>$LOG
+Stat $?
+
 Head "update Frontend Configuration"
 cd /var/www/html/frontend && npm install && npm run build && npm start &>>$LOG
+Stat $?
+
+Head "Update EndPoints in Service File"
+sed -i -e "s//cart.zsdevops01.online/" -e "s/USERHOST/user.zsdevops01.online/" -e "s/AMQPHOST/rabbitmq.zsdevops01.online/" /home/roboshop/payment/systemd.service
 Stat $?
 
 Head "Restart Nginx Service"
