@@ -21,8 +21,7 @@ cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
-Head "Installing nodejs & Npm"
- apt install nodejs -y
+Head "Installing Npm"
  apt-get install npm -y
  Stat $?
 
