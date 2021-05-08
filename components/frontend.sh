@@ -12,6 +12,7 @@ Stat $?
 
 Head "Installing Npm"
 apt install npm -y &>>$LOG
+Stat $?
 
 DOWNLOAD_COMPONENT
 
