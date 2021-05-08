@@ -2,29 +2,24 @@
 
 source components/common.sh
 
+DOMAIN="zsdevops01.online"
+
 OS_PREREQ
 
 Head "Installing Nginx"
 apt install nginx -y &>>$LOG
 Stat $?
 
-Head "Update Nginx Configuration"
-cd /etc/nginx/sites-enabled
-sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
-cd /var/www/html
-Stat $?
-
-DOWNLOAD_COMPONENT 
-
-Head "Install npm and start npm service"
-cd frontend
+Head "Installing Npm"
 apt install npm -y &>>$LOG
-npm install 
-npm run build 
-npm start 
+
+DOWNLOAD_COMPONENT
+
+Head "Remove Default Configuration"
+rm -rf /var/www/html /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 Stat $?
 
-Head "Restart Nginx service"
-systemctl restart nginx
-
+Head "Unzip Downloaded Archive"
+cd /var/www && unzip -o /tmp/frontend.zip &>>$LOG && mv frontend-main/* . && mv static html && rm -rf frontend-main README.md
+Stat $?
 
