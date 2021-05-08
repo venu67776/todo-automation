@@ -17,7 +17,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
-cd /var/www/html && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip && mv frontend-main frontend && cd frontend
+cd /var/www/html && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip  && rm -rf frontend && mv frontend-main frontend && cd frontend
 Stat $?
 
 Head "Update Nginx Configuration"
@@ -26,7 +26,7 @@ sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/
 Stat $?
 
 Head "update Frontend Configuration"
-cd /var/www/html/frontend && npm install &>>$LOG && npm run build && npm start &>>$LOG
+cd /var/www/html/frontend && npm install && npm run build && npm start &>>$LOG
 Stat $?
 
 Head "Restart Nginx Service"
