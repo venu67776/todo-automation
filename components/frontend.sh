@@ -22,7 +22,7 @@ sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/
 Stat $?
 
 Head "Installing Npm"
- apt-get install npm -y
+ apt install npm -y
  Stat $?
 
 Head "update Frontend Configuration"
