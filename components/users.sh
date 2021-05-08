@@ -4,11 +4,11 @@ source components/common.sh
 
 OS_PREREQ
 
-Head "Installing java"
-sudo apt install openjdk-8-jdk
+Head "Install java"
+sudo apt-get install openjdk-8-jdk
 Stat $?
 
-Head "Installing maven"
+Head "Install maven"
 apt install maven -y &>>$LOG
 Stat $?
 
