@@ -30,7 +30,7 @@ Head "update frontend configuration"
 cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loader node-sass wepy-compiler-sass && npm run build && npm start
  
 Head "update end points in service file"
-cd /var/www/html/vue/frontend/config
+cd /var/www/html/vue/frontend/
 export AUTH_API_ADDRESS=http://login.venu6766.tk:8080
 export TODOS_API_ADDRESS=http://todos.venu6766.tk:8080
 
