@@ -26,4 +26,4 @@ sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enab
 Stat $?
 
 Head "update frontend configuration"
-cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loader node-sass && npm start
+cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loader node-sass wepy-compiler-sass && npm run build && npm start
