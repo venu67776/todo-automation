@@ -27,8 +27,4 @@ apt install npm -y
 Stat $?
 
 Head "update frontend configuration"
-cd /var/www/html/frontend  && npm install && npm run build && npm start 
-
-Head "Restart Nginx Service"
-systemctl restart nginx
-Stat $?
+cd /var/www/html/frontend   
