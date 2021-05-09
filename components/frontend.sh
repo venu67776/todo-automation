@@ -11,9 +11,7 @@ apt install nginx -y &>>$LOG
 Stat $?
 
 Head "Install nodejs and npm"
-apt install nodejs -y
 apt install npm -y
-apt install node-node-sass -y
 Stat $?
 
 DOWNLOAD_COMPONENT
