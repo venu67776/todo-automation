@@ -27,4 +27,4 @@ sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enab
 Stat $?
 
 Head "update frontend configuration"
-cd /var/www/html/frontend  && npm install && npm run build && npm start
+cd /var/www/html/vue/frontend  && npm install && npm run build && npm start
