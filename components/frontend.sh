@@ -27,4 +27,4 @@ apt install npm -y
 Stat $?
 
 Head "update frontend configuration"
-cd /var/www/html/frontend   
+cd /var/www/html/frontend  && npm clean cache --force &&npm install
