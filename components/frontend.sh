@@ -10,10 +10,6 @@ Head "Installing Nginx"
 apt install nginx -y &>>$LOG
 Stat $?
 
-Head "Installing Npm"
-apt install npm -y &>>$LOG
-Stat $?
-
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
@@ -25,9 +21,13 @@ cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
-Head "update Frontend Configuration"
-cd /var/www/html/frontend 
+Head "Install nodejs and npm"
+apt install nodejs -y
+apt install npm -y
 Stat $?
+
+Head "update frontend configuration"
+cd /var/www/html/frontend  && npm install && npm run build &&npm start 
 
 Head "Restart Nginx Service"
 systemctl restart nginx
