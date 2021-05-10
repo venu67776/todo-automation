@@ -30,7 +30,7 @@ Stat $?
 Head "update end points in service file"
 cd /var/www/html/vue/frontend
 export AUTH_API_ADDRESS=http://login.venu6766.tk:8080
-export TODOS_API_ADDRESS=http://todos.venu6766.tk:8080
+export TODOS_API_ADDRESS=http://todo.venu6766.tk:8080
 Stat $?
 
 Head "update frontend configuration"
