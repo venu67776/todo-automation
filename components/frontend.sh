@@ -37,5 +37,5 @@ cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loade
 Stat $?
 
 head "Start Npm service"
-npm start &>>$LOG
+npm start 
 Stat $?
