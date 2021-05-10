@@ -19,16 +19,18 @@ Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
-Head "update end points in service file"
-cd /var/www/html/vue/frontend
-export AUTH_API_ADDRESS=http://login.venu6766.tk:8080
-export TODOS_API_ADDRESS=http://todos.venu6766.tk:8080
-Stat $?
+
 
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
 cd /var/www/html &&rm -rf vue && mkdir vue && cd vue && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip  && rm -rf frontend && mv frontend-main frontend && cd frontend
+Stat $?
+
+Head "update end points in service file"
+cd /var/www/html/vue/frontend
+export AUTH_API_ADDRESS=http://login.venu6766.tk:8080
+export TODOS_API_ADDRESS=http://todos.venu6766.tk:8080
 Stat $?
 
 Head "update frontend configuration"
