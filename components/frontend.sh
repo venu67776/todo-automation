@@ -11,7 +11,7 @@ apt install nginx -y &>>$LOG
 systemctl restart nginx 
 Stat $?
 
-Head "Install nodejs and npm"
+Head "Install npm"
 apt install npm -y &>>$LOG
 Stat $?
 
@@ -19,7 +19,6 @@ Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
 sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
-
 
 DOWNLOAD_COMPONENT
 
@@ -35,8 +34,4 @@ Stat $?
 
 Head "update frontend configuration"
 cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loader node-sass wepy-compiler-sass &>>$LOG && npm run build &>>$LOG && npm start &>>$LOG
- Stat $?
-
-Head "Restart the Nginx service"
- systemctl restart nginx
- Stat $?
+Stat $?
