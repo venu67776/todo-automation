@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source components/common.sh
+DOMAIN="venu6766.tk"
 
 OS_PREREQ
 
@@ -15,7 +16,7 @@ cd /home/ubuntu && rm -rf login && unzip -o /tmp/login.zip &>>$LOG && mv login-m
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/user_endpoint/users.venu6766.tk/" /home/ubuntu/login/systemd.service
+sed -i -e "s/user_endpoint/users.${DOMAIN}/" /home/ubuntu/login/systemd.service
 Stat $?
 
 
