@@ -17,7 +17,7 @@ cd /home/ubuntu && rm -rf todo && unzip -o /tmp/todo.zip &>>$LOG && mv todo-main
 Stat $?
 
 Head "Update EndPoints in Service File"
-sed -i -e "s/user_endpoint/redis.venu676.tk/" /home/ubuntu/todo/systemd.service
+sed -i -e "s/user_endpoint/redis.venu6766.tk/" /home/ubuntu/todo/systemd.service
 Stat $?
 
 
