@@ -16,7 +16,7 @@ apt install npm -y &>>$LOG
 Stat $?
 
 Head "Update Nginx Configuration"
-cd /etc/nginx/sites-enabled
+if [grep /var/www/html/vue/frontend/dist /etc/nginx/sites-enabled/default -ne 0 ] ; then
 sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
