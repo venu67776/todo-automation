@@ -17,6 +17,7 @@ Stat $?
 
 Head "Update Nginx Configuration"
 cd /etc/nginx/sites-enabled
+if [ sed -i 's|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default ]; then
 sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default
 Stat $?
 
