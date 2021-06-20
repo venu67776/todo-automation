@@ -30,7 +30,7 @@ cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loade
 Stat $?
 
 Head "Update Nginx Configuration"
-mv roboshop.conf /etc/nginx/sites-enabled/todo.conf
+mv todo.conf /etc/nginx/sites-enabled/todo.conf
 for comp in login todo ; do
   sed -i -e "/$comp/ s/hostname/${comp}.${DOMAIN}/" /etc/nginx/sites-enabled/todo.conf
 done
