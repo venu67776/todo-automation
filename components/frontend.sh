@@ -32,7 +32,7 @@ Stat $?
 Head "Update Nginx Configuration"
 mv roboshop.conf /etc/nginx/sites-enabled/todo.conf
 for comp in login todo ; do
-  sed -i -e "/$comp/ s/hostname/${comp}.zsdevops01.online/" /etc/nginx/sites-enabled/todo.conf
+  sed -i -e "/$comp/ s/hostname/${comp}.${DOMAIN}/" /etc/nginx/sites-enabled/todo.conf
 done
 Stat $?
 
