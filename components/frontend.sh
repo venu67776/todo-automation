@@ -25,16 +25,17 @@ Head "Unzip Downloaded Archive"
 cd /var/www/html &&rm -rf vue && mkdir vue && cd vue && unzip -o /tmp/frontend.zip &>>$LOG && rm -rf frontend.zip  && rm -rf frontend && mv frontend-main frontend && cd frontend
 Stat $?
 
-Head "update end points in service file"
-cd /var/www/html/vue/frontend
-export AUTH_API_ADDRESS=http://login.${DOMAIN}:8080
-export TODOS_API_ADDRESS=http://todo.${DOMAIN}:8080
-Stat $?
-
 Head "update frontend configuration"
 cd /var/www/html/vue/frontend  && sudo npm install --unsafe-perm sass sass-loader node-sass wepy-compiler-sass &>>$LOG && npm run build &>>$LOG 
 Stat $?
 
-head "Start Npm service"
-npm start 
+Head "Update Nginx Configuration"
+mv roboshop.conf /etc/nginx/sites-enabled/todo.conf
+for comp in login todo ; do
+  sed -i -e "/$comp/ s/hostname/${comp}.zsdevops01.online/" /etc/nginx/sites-enabled/todo.conf
+done
+Stat $?
+
+Head "Restart Nginx Service"
+systemctl restart nginx
 Stat $?
