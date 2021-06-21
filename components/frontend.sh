@@ -15,10 +15,6 @@ Head "Install npm"
 apt install npm -y &>>$LOG
 Stat $?
 
-Head "Update Nginx Configuration"
-sed -i 's|/var/www/html|/var/www/html/vue/frontend/dist|g' /etc/nginx/sites-enabled/default
-Stat $?
-
 DOWNLOAD_COMPONENT
 
 Head "Unzip Downloaded Archive"
