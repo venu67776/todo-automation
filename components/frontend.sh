@@ -31,6 +31,8 @@ Stat $?
 
 Head "Update Nginx Configuration"
 mv todo.conf /etc/nginx/sites-enabled/todo.conf
+for comp in login todo ; do
+  sed -i -e "/$comp/ s/localhost/${comp}.${DOMAIN}/" /etc/nginx/sites-enabled/todo.conf
 done
 Stat $?
 
