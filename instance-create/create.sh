@@ -15,7 +15,7 @@ Instance_Create() {
   INSTANCE_EXISTS=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${COMPONENT}  | jq .Reservations[])
   STATE=$(aws ec2 describe-instances     --filters Name=tag:Name,Values=${COMPONENT}  | jq .Reservations[].Instances[].State.Name | xargs)
   if [ -z "${INSTANCE_EXISTS}" -o "$STATE" == "terminated"  ]; then
-    aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}, {Key=Project,Value=TODO}]" | jq
+    aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}, {Key=Project,Value=ROBOSHOP}]" | jq
   else
     echo "Instance ${COMPONENT} already exists"
   fi
@@ -24,15 +24,15 @@ Instance_Create() {
   IPADDRESS=$(aws ec2 describe-instances     --filters Name=tag:Name,Values=${COMPONENT}   | jq .Reservations[].Instances[].PrivateIpAddress | grep -v null |xargs)
 
   sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" record.json >/tmp/record.json
-  aws route53 change-resource-record-sets --hosted-zone-id 	Z015478834HE9QDBAGO9B --change-batch file:///tmp/record.json
+  aws route53 change-resource-record-sets --hosted-zone-id Z015478834HE9QDBAGO9B --change-batch file:///tmp/record.json
   sed -i -e "/${COMPONENT}/ d" ../ips
   echo "${IPADDRESS} COMPONENT=$(echo ${COMPONENT} | awk -F - '{print $1}')" >>../ips
 }
 
 if [ "$1" == "all" ]; then
-  for instance in frontend redis users login todo ; do
-    Instance_Create $instance-dev
+  for instance in frontend login users todo redis ; do
+    Instance_Create $instance
   done
 else
-  Instance_Create $1-dev
-fi
+  Instance
+f
