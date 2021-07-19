@@ -35,4 +35,4 @@ if [ "$1" == "all" ]; then
   done
 else
   Instance
-f
+fi
