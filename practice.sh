@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sshpass -p "Devops321" ssh -o StrictHostKeyChecking=no ubuntu@login.venu6766.tk
+sshpass -p 'DevOps321'  ssh ubuntu@login.venu6766.tk
 
 
 cd /root && mkdir venu 
