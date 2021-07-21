@@ -2,6 +2,6 @@
 
 for component in redis todo users login frontend ; do
 
-   sshpass -p DevOps321 ssh ubuntu@$component.venu6766.uk "git clone https://github.com/venu67776/Todo-automation.git ; cd Todo-automation ; sudo bash Todo.sh $component"
+   sshpass -p DevOps321 ssh ubuntu@${component}.venu6766.uk "git clone https://github.com/venu67776/Todo-automation.git ; cd Todo-automation ; sudo bash Todo.sh ${component}"
 
 done
