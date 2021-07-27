@@ -18,7 +18,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Remove Default Configuration"
-rm -rf /var/www/html /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+rm -rf  /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 Stat $?
 
 Head "Unzip Downloaded Archive"
