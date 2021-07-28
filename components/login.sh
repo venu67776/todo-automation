@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source components/common.sh
-DOMAIN="venuzs.tk"
+DOMAIN="ansible.ga"
 
 OS_PREREQ
 
