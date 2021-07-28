@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source components/common.sh
-DOMAIN="venu6766.tk"
+DOMAIN="venuzs.tk"
 
 OS_PREREQ
 
