@@ -20,6 +20,6 @@ cd /home/ubuntu && rm -rf users && unzip -o /tmp/users.zip &>>$LOG && mv users-m
 Stat $?
 
 Head "Setup SystemD Service"
-mv /home/ubuntu/users/systemd.service /etc/systemd/system/users.service && systemctl daemon-reload && systemctl enable users && systemctl start users &>>$LOG
+mv /home/ubuntu/users/systemd.service /etc/systemd/system/users.service && systemctl daemon-reload && systemctl start users && systemctl enable users &>>$LOG
 Stat $?
 
